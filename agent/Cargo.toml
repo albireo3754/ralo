@@ -26,4 +26,5 @@ void = "1.0.2"
 anyhow = "1.0.75"
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
-core = { path = "../core" }
+ralo-core = { path = "../ralo-core" }
+binance-rs-async = { version = "1.3.3", features = ["all_apis", "default"] }
