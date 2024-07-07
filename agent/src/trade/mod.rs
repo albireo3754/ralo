@@ -3,14 +3,7 @@ pub mod mock;
 use anyhow::Result;
 use binance::{
     account::{Account, OrderRequest},
-    api::Binance,
-    config::Config,
-    futures::{market::FuturesMarket, rest_model::Trade},
-    general::General,
-    margin::Margin,
-    market::Market,
     rest_model::OrderSide,
-    userstream::UserStream,
 };
 use ralo_core::entity::symbol::Symbol;
 

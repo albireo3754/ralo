@@ -28,6 +28,7 @@ dependencies = [
  "futures",
  "futures-util",
  "itertools",
+ "lazy_static",
  "poise",
  "postgrest",
  "ralo-core",
@@ -1416,6 +1417,7 @@ dependencies = [
 name = "ralo-core"
 version = "0.1.0"
 dependencies = [
+ "lazy_static",
  "strum",
  "tokio",
 ]
