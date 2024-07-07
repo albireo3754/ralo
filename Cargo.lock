@@ -1417,9 +1417,23 @@ dependencies = [
 name = "ralo-core"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
+ "axum",
+ "dotenv",
+ "futures",
+ "futures-util",
+ "itertools",
  "lazy_static",
+ "postgrest",
+ "rand",
+ "reqwest 0.12.5",
+ "serde",
+ "serde_json",
  "strum",
  "tokio",
+ "tracing",
+ "tracing-subscriber",
+ "void",
 ]
 
 [[package]]

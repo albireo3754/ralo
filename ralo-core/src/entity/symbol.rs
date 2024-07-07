@@ -2,19 +2,19 @@ use strum::AsRefStr;
 
 #[derive(Debug, Clone, AsRefStr)]
 pub enum Symbol {
-    #[strum(serialize = "btcusdt")]
+    #[strum(serialize = "BTCUSDT")]
     Bitcoin,
-    #[strum(serialize = "ethusdt")]
+    #[strum(serialize = "ETHUSDT")]
     Ethereum,
-    #[strum(serialize = "fdusdusdt")]
+    #[strum(serialize = "FDUSDUSDT")]
     TetherUS,
-    #[strum(serialize = "bnbusdt")]
+    #[strum(serialize = "BNBUSDT")]
     Bnb,
-    #[strum(serialize = "solusdt")]
+    #[strum(serialize = "SOLUSDT")]
     Solana,
-    #[strum(serialize = "xrpusdt")]
+    #[strum(serialize = "XRPUSDT")]
     Ripple,
-    #[strum(serialize = "usdcusdt")]
+    #[strum(serialize = "USDCUSDT")]
     USDCoin,
     #[strum(serialize = "adausdt")]
     Cardano,

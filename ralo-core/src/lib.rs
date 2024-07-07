@@ -1,4 +1,5 @@
 pub mod entity;
+pub mod log;
 pub mod utils;
 
 pub fn add(left: usize, right: usize) -> usize {

@@ -6,6 +6,7 @@ use binance::{
     rest_model::OrderSide,
 };
 use ralo_core::entity::symbol::Symbol;
+use tracing::{info, instrument};
 
 // https://binance-docs.github.io/apidocs/spot/en/#sub-account-endpoints
 // https://binance.github.io/binance-api-swagger/
@@ -31,7 +32,9 @@ impl BinanaceTradeService {
         Self { account }
     }
 
+    #[instrument(skip(self))]
     pub async fn buy(&self, symbol: Symbol, quantity: f64, price: f64) -> Result<()> {
+        info!("buy symbol: {}", symbol.as_ref().to_owned());
         let order = OrderRequest {
             symbol: symbol.as_ref().to_owned(),
             side: OrderSide::Buy,
