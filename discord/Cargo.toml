@@ -1,16 +1,9 @@
 [package]
-name = "agent"
+name = "discord"
 version = "0.1.0"
 edition = "2021"
 
-[[bin]]
-name = "test"
-path = "src/bin/test.rs"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-
 tokio = { version = "1.38.0", features = ["full"] }
 futures = { version = "0.3.13", default-features = false }
 futures-util = { version = "0.3.13", default-features = false }
@@ -30,6 +23,5 @@ tracing = "0.1.40"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
 lazy_static = "1.5.0"
 
-binance-rs-async = { version = "1.3.3", features = ["all_apis", "default"] }
-
-ralo-core = { path = "../ralo-core" }
+serenity = { version = "0.12" }
+poise = { git = "https://github.com/serenity-rs/poise", branch = "next" }

@@ -1,2 +1,2 @@
 [workspace]
-members = ["agent", "ralo-core"]
+members = ["agent", "discord", "push", "ralo-core"]

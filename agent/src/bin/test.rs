@@ -1,7 +1,6 @@
 use agent::{trade::BinanaceTradeService, AGENT_ENV};
-use binance::{account::Account, api::Binance, config::Config};
+use binance::{account::Account, api::Binance, config::Config, margin::Margin};
 use ralo_core::{entity::symbol::Symbol, log::init_log_settings};
-use tracing::info;
 
 #[tokio::main]
 async fn main() {
@@ -14,6 +13,6 @@ async fn main() {
     );
     let client = BinanaceTradeService::new(account);
 
-    let result = client.buy(Symbol::Bitcoin, 1.0, 1.0).await;
-    info!("{:?}", result);
+    let result = client.fetch_account_info().await;
+    // info!("{:?}", result);
 }
