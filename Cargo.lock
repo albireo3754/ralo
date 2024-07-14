@@ -480,6 +480,7 @@ dependencies = [
  "lazy_static",
  "poise",
  "postgrest",
+ "ralo-core",
  "rand",
  "reqwest 0.12.5",
  "serde",

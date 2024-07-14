@@ -1,12 +1,7 @@
-pub mod history;
-pub mod world;
-
 use crate::common::{RlContext, RlError};
 
-use anyhow::Result;
-
-#[poise::command(slash_command, rename = "hellotest", prefix_command)]
-pub async fn hello(
+#[poise::command(slash_command, rename = "world", prefix_command)]
+pub async fn world(
     ctx: RlContext<'_>,
     // #[description = "등록할 소환사명"] summoner_name: String,
     // #[description = "티어"]

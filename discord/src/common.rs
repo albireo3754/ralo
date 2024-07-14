@@ -1,7 +1,7 @@
 use std::fmt;
 
-pub type Error = Box<dyn std::error::Error + Send + Sync>;
-pub type Context<'a> = poise::Context<'a, State, Error>;
+pub type RlError = Box<dyn std::error::Error + Send + Sync>;
+pub type RlContext<'a> = poise::Context<'a, State, RlError>;
 
 #[derive(Clone, Debug, Default)]
 pub struct State {
