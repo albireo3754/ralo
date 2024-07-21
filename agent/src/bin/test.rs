@@ -1,6 +1,10 @@
-use agent::{trade::BinanaceTradeService, AGENT_ENV};
-use binance::{account::Account, api::Binance, config::Config, margin::Margin};
-use ralo_core::{entity::symbol::Symbol, log::init_log_settings};
+use agent::{
+    agent::Agent,
+    trade::{mock::MockTradeService, BinanaceTradeService},
+    AGENT_ENV,
+};
+use binance::{account::Account, api::Binance, config::Config};
+use ralo_core::log::init_log_settings;
 
 #[tokio::main]
 async fn main() {
@@ -13,6 +17,11 @@ async fn main() {
     );
     let client = BinanaceTradeService::new(account);
 
-    let result = client.fetch_account_info().await;
+    let agent = Agent {
+        state: Default::default(),
+        trade_service: MockTradeService::new(),
+    };
+
+    agent.run().await;
     // info!("{:?}", result);
 }

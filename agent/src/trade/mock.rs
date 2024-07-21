@@ -3,7 +3,7 @@ use super::TradeService;
 pub struct MockTradeService {}
 
 impl MockTradeService {
-    fn new() -> Self {
+    pub fn new() -> Self {
         MockTradeService {}
     }
 }

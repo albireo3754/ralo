@@ -1,3 +1,4 @@
+pub mod auto_approval;
 pub mod mock;
 
 use std::io::Write;
@@ -10,6 +11,8 @@ use binance::{
 };
 use ralo_core::entity::symbol::Symbol;
 use tracing::{info, instrument};
+
+use crate::algorithm::common::TradeChoices;
 
 // https://binance-docs.github.io/apidocs/spot/en/#sub-account-endpoints
 // https://binance.github.io/binance-api-swagger/
@@ -24,7 +27,11 @@ use tracing::{info, instrument};
 // Cardano("adausdt"),
 // Unknown("unknown");
 
-pub trait TradeService {}
+pub struct TradeResult {}
+
+pub trait TradeService {
+    fn trade(&self, choice: &TradeChoices) -> TradeResult;
+}
 
 pub struct BinanaceTradeService {
     account: Account,
@@ -91,3 +98,7 @@ impl BinanaceTradeService {
 }
 
 impl TradeService for BinanaceTradeService {}
+
+pub trait TradeApprovalService {
+    fn check_trade_approve(&self, choice: &TradeChoices) -> bool;
+}
